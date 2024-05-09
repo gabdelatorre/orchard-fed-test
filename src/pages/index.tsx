@@ -1,14 +1,14 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
+import { Open_Sans } from "next/font/google";
+import { LandingSection } from "@/components/LandingSection";
+import { ArticlesSection } from "@/components/ArticlesSection";
 
-const inter = Inter({ subsets: ["latin"] });
+const openSans = Open_Sans({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      Home
+    <main className={`${openSans.className}`}>
+      <LandingSection />
+      <ArticlesSection />
     </main>
   );
 }
