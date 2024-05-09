@@ -12,6 +12,7 @@ const config: Config = {
         xs: "320px",
       },
       colors: {
+        "orchard-grey": { 100: "#b7b9b9", 300: "#888a8a" },
         "orchard-black": "#0e1414",
         "orchard-red": "#cf1430",
       },

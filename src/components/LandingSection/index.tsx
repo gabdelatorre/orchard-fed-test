@@ -3,9 +3,9 @@ import Image from "next/image";
 import { MouseEvent, useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { ImageModal } from "../ImageModal";
-import { ImageType } from "@/types";
+import { ImageType, LandingArticleType } from "@/types";
 
-const ARTICLE_CONTENT = {
+const ARTICLE_CONTENT: LandingArticleType = {
   images: [
     {
       imageUrl: "/component-01/Image-01.jpg",
@@ -51,7 +51,7 @@ export const LandingSection = () => {
 
   return (
     <Dialog.Root onOpenChange={handleModalChange}>
-      <section className="flex gap-4 xs:p-8 sm:p-24 lg:p-40">
+      <section className="flex gap-4 xs:px-8 sm:px-24 xl:px-40 xs:pt-8 sm:pt-24 xl:pt-40">
         <div className="grid xs:grid-cols-1 lg:grid-cols-3 gap-4">
           <div className="grid xs:grid-cols-1 sm:grid-cols-2 gap-4 col-span-2">
             <div className="ml-auto mr-auto">
@@ -96,10 +96,10 @@ export const LandingSection = () => {
 
           <div>
             <article className="mb-8">
-              <h1 className="uppercase font-light text-2xl pb-4 border-b border-solid border-white mb-6">
+              <h1 className="uppercase font-light text-2xl pb-4 border-b border-solid border-orchard-grey-100 mb-6 text-orchard-grey-100">
                 {content.primary.title}
               </h1>
-              <p className="font-light leading-7">
+              <p className="font-light leading-7 text-orchard-grey-100">
                 {content.primary.description}
               </p>
             </article>
