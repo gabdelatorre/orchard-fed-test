@@ -35,7 +35,7 @@ export const ArticlesSection = () => {
   });
 
   return (
-    <section className="flex flex-col gap-16 xs:p-8 sm:p-24 xl:p-40 justify-center items-center">
+    <section className="flex flex-col gap-16 xs:p-8 sm:p-24 xl:p-40 justify-center items-center max-w-[1550px] m-auto">
       <h1 className="uppercase font-light text-4xl">{articleList.header}</h1>
       <div className="grid xs:grid-cols-1 lg:grid-cols-3 gap-4">
         {articleList.articles.map((article, idx) => {

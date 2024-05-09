@@ -72,7 +72,7 @@ export const LandingSection = () => {
 
   return (
     <Dialog.Root onOpenChange={handleModalChange}>
-      <section className="flex gap-4 xs:px-8 sm:px-24 xl:px-40 xs:pt-8 sm:pt-24 xl:pt-40">
+      <section className="flex gap-4 xs:px-8 sm:px-24 xl:px-40 xs:pt-8 sm:pt-24 xl:pt-40 max-w-[1550px] m-auto">
         <div className="grid xs:grid-cols-1 lg:grid-cols-3 gap-4">
           <div className="grid xs:grid-cols-1 sm:grid-cols-2 gap-4 col-span-2">
             <div className="ml-auto mr-auto">
