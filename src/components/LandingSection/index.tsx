@@ -2,6 +2,8 @@
 import Image from "next/image";
 import { MouseEvent, useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
+import { useSpring, animated } from "@react-spring/web";
+
 import { ImageModal } from "../ImageModal";
 import { ImageType, LandingArticleType } from "@/types";
 
@@ -35,9 +37,28 @@ const ARTICLE_CONTENT: LandingArticleType = {
   },
 };
 
+const SPRING_ANIMATION = {
+  from: { opacity: 0 },
+  to: { opacity: 1 },
+  config: {
+    duration: 1000,
+  },
+};
+
 export const LandingSection = () => {
   const content = ARTICLE_CONTENT;
   const [selectedImage, setSelectedImage] = useState<ImageType>();
+
+  // animations
+  const image1Spring = useSpring(SPRING_ANIMATION);
+  const image2Spring = useSpring({
+    ...SPRING_ANIMATION,
+    delay: 100,
+  });
+  const image3Spring = useSpring({
+    ...SPRING_ANIMATION,
+    delay: 150,
+  });
 
   const handleImageClick =
     (image: ImageType) => (evt: MouseEvent<HTMLButtonElement>) => {
@@ -56,39 +77,48 @@ export const LandingSection = () => {
           <div className="grid xs:grid-cols-1 sm:grid-cols-2 gap-4 col-span-2">
             <div className="ml-auto mr-auto">
               <Dialog.Trigger asChild>
-                <button onClick={handleImageClick(content.images[0])}>
+                <animated.button
+                  style={image1Spring}
+                  onClick={handleImageClick(content.images[0])}
+                >
                   <Image
                     src={content.images[0].imageUrl}
                     alt={content.images[0].alt}
                     width={500}
                     height={500}
                   />
-                </button>
+                </animated.button>
               </Dialog.Trigger>
             </div>
             <div className="flex flex-col gap-4">
               <div className="ml-auto mr-auto md:ml-0 md:mr-0">
                 <Dialog.Trigger asChild>
-                  <button onClick={handleImageClick(content.images[1])}>
+                  <animated.button
+                    style={image2Spring}
+                    onClick={handleImageClick(content.images[1])}
+                  >
                     <Image
                       src={content.images[1].imageUrl}
                       alt={content.images[1].alt}
                       width={400}
                       height={400}
                     />
-                  </button>
+                  </animated.button>
                 </Dialog.Trigger>
               </div>
               <div className="ml-auto mr-auto md:ml-0 md:mr-0">
                 <Dialog.Trigger asChild>
-                  <button onClick={handleImageClick(content.images[2])}>
+                  <animated.button
+                    style={image3Spring}
+                    onClick={handleImageClick(content.images[2])}
+                  >
                     <Image
                       src={content.images[2].imageUrl}
                       alt={content.images[2].alt}
                       width={400}
                       height={400}
                     />
-                  </button>
+                  </animated.button>
                 </Dialog.Trigger>
               </div>
             </div>
