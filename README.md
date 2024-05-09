@@ -28,3 +28,6 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Notes
+- CSS specs/measurements are not exactly followed, due to that developer access to Invision's design project could not be provided.
